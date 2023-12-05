@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class CountCharacters {
     public static void main(String[] args)
-            throws FileNotFoundException {
+        throws FileNotFoundException {
 // BONUS- get user input
         Scanner input = new Scanner(System.in);
         System.out.println("Press enter to use the default text \nor ENTER YOUR OWN TEXT: ");
@@ -15,11 +15,12 @@ public class CountCharacters {
 
 // BONUS- read text from file
         if (sampleText.isEmpty()) {
-            File textFile = new File("./collections-studio/src/main/resources/sample.txt");
-            Scanner text = new Scanner(textFile);
-            sampleText += text.nextLine();
+            Scanner text = new Scanner(new File("./collections-studio/src/main/resources/sample.txt"));
+            while (text.hasNextLine()) sampleText += text.nextLine();
+            text.close();
             System.out.println("SAMPLE TEXT:\n" + sampleText + "\n");
         }
+
 // BONUS- make array case-insensitive
         char[] charArray = sampleText.toLowerCase().toCharArray();
         HashMap<Character, Integer> charList = new HashMap<>();
