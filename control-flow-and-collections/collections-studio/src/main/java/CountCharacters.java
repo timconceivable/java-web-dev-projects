@@ -12,6 +12,7 @@ public class CountCharacters {
         System.out.println("Press enter to use the default text \nor ENTER YOUR OWN TEXT: ");
         String sampleText = input.nextLine();
         input.close();
+
 // BONUS- read text from file
         if (sampleText.isEmpty()) {
             File textFile = new File("./collections-studio/src/main/resources/sample.txt");
@@ -22,6 +23,8 @@ public class CountCharacters {
 // BONUS- make array case-insensitive
         char[] charArray = sampleText.toLowerCase().toCharArray();
         HashMap<Character, Integer> charList = new HashMap<>();
+        int spaces = 0;
+        int other = 0;
 
         for (char chr : charArray) {
 // BONUS- check if characters are alphanumeric
@@ -31,16 +34,20 @@ public class CountCharacters {
                 } else {
                     charList.put(chr, 1);
                 }
+            } else {
+                if (Character.isSpaceChar(chr)) { spaces++;
+                } else { other++; }
             }
         }
-// PRINT LETTERS AND THEIR COUNTS
+// PRINT LETTERS, THEIR COUNTS, SPACES, AND OTHER CHARACTERS
 /*        for (Character c : charList.keySet()) {
             System.out.println(c + ": " + charList.get(c) );
         }
 */
-// MORE ADVANCED ITERATION OVER HASHMAP
+// FOR FUN- MORE ADVANCED ITERATION OVER HASHMAP
         charList.forEach( (key, value) ->
             System.out.println(key + ": " + value)
         );
+        System.out.println("spaces: " + spaces + "\nother: " + other);
     }
 }
