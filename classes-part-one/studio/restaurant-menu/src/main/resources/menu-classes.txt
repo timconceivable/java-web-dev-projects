@@ -1,0 +1,17 @@
+2 classes Menu and Menu Item
+
+Menu Class - public
+-	title String private
+- 	lastUpdated LocalDate private (java.time.LocalDate)
+- 	ItemsList ArrayList <MenuItem>
+-	printMenu method public
+x	sortMenu method (category, price, name)
+
+MenuItem Class - public 
+-	name String private
+-	price Double private
+-	description String private
+-	category (appetizer, main course, dessert) String private
+-	newItem Boolean private
+x	image (url) String private
+-	printItem method public
