@@ -15,7 +15,7 @@ public class CountCharacters {
 
 // BONUS- read text from file
         if (sampleText.isEmpty()) {
-            Scanner text = new Scanner(new File("./collections-studio/src/main/resources/sample.txt"));
+            Scanner text = new Scanner(new File("./collections-studio/src/main/resources/sample.txt").getAbsolutePath());
             while (text.hasNextLine()) sampleText += text.nextLine();
             text.close();
             System.out.println("SAMPLE TEXT:\n" + sampleText + "\n");
