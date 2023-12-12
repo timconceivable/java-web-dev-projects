@@ -1,24 +1,41 @@
 package org.launchcode;
 
+enum Category {
+    APPETIZER, ENTREE, DESSERT;
+    @Override public String toString() {
+        return switch (this) {
+            case APPETIZER -> "Appetizer";
+            case ENTREE -> "Entree";
+            case DESSERT -> "Dessert";
+            default -> null;
+        };
+    }
+}
+
 public class MenuItem {
     private String name;
-    private String category;
-    private Double price;
+    private Category category;
+    private double price;
     private String description;
-    private Boolean newItem;
+    private boolean isNew;
 
-    public MenuItem(String name, String category, Double price, String description, Boolean newItem) {
+    public MenuItem(String name, double price, String description, Category category, boolean isNew) {
         this.name = name;
-        this.category = category;
         this.price = price;
         this.description = description;
-        this.newItem = newItem;
+        this.category = category;
+        this.isNew = isNew;
     }
 
     public void printItem() {
-        System.out.println( String.format("%s%s - $%s \n%s (%s) \n",
-                this.newItem ? "NEW! " : "", this.name, this.price,
-                this.description, this.category) );
+        System.out.printf( "%s%s - $%.2f \n%s (%s) \n",
+            this.isNew ? "NEW! " : "", this.name, this.price,
+            this.description, this.category );
+    }
+
+    public boolean equals(Object toBeCompared) {
+        MenuItem theItem = (MenuItem) toBeCompared;
+        return theItem.getName() == getName();
     }
 
     public void setName(String name) {
@@ -27,16 +44,14 @@ public class MenuItem {
     public String getName() {
         return name;
     }
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-    public Double getPrice() {
+    public void setPrice(double price) { this.price = price; }
+    public double getPrice() {
         return price;
     }
     public void setDescription(String description) {
@@ -45,10 +60,10 @@ public class MenuItem {
     public String getDescription() {
         return description;
     }
-    public void setNewItem(Boolean newItem) {
-        this.newItem = newItem;
+    public void setIsNew(boolean isNew) {
+        this.isNew = isNew;
     }
-    public Boolean getNewItem() {
-        return newItem;
+    public boolean getIsNew() {
+        return isNew;
     }
 }
