@@ -1,31 +1,46 @@
-Quiz class
-create questions
-run application {
-print question
-scan for user input
-save answers
-grade answers
-print score
+QuizRunner class {
+    run application {
+        forEach question {
+            print question
+            scan for user input
+            validate input?
+            save input into an array?
+        }
+        grade quiz, save score
+        print results
+    }
 }
 
-abstract Question class {
-String questionText
-ArrayList/Hashmap? possibleAnswers
-String/Array correctAnswer
-int pointValue = 1
+Quiz class {
+    print quiz
+    add questions
+    grade quiz?
 }
 
-multipleChoice class {
-questionText
-the question
-A B C D
-correctAnswer
-1
+Question class (abstract?) {
+    String questionText
+    ArrayList/Hashmap? possibleAnswers
+    String/Array? correctAnswer
+    int pointValue = 1
 }
 
 trueFalse class {
-String the question
-Array possibleAnswers true, false
-true
-1
+    String questionText (the question)
+    Array possibleAnswers = [true, false]
+    String correctAnswer = true
+    1
+}
+
+Choice class {
+    String questionText (the question)
+    Array possibleAnswers = [A B C D]
+    String correctAnswer = C
+    1
+}
+
+checkBox class {
+    String questionText (the question)
+    Array possibleAnswers = [A B C D]
+    String correctAnswer = BCD (multiple correct answers)
+    1x number of correct (string length)
 }
