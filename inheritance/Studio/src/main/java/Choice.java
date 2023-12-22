@@ -1,7 +1,7 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Choice extends Question {
-    public Choice(String questionText, ArrayList<String> possibleAnswers, String correctAnswer) {
+    public Choice(String questionText, List<String> possibleAnswers, String correctAnswer) {
         super(questionText, possibleAnswers, correctAnswer);
     }
 

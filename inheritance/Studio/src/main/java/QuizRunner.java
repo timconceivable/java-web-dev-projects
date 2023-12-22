@@ -1,12 +1,19 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
 public class QuizRunner {
-    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        // RUN QUIZ
-        ArrayList<Question> questions = new ArrayList<>();
+        // CREATE & RUN QUIZ
+        List<Question> questions = new ArrayList<>();
+
+        questions.add(new TrueFalse("Is Earth flat?", false));
+        questions.add(new Choice("What is your favorite color?", Arrays.asList("yellow", "blue", "purple"), "purple"));
+        questions.add(new Checkbox("Which colors are not red?", Arrays.asList("yellow", "blue", "purple"), Arrays.asList("yellow", "blue", "purple") ));
+
         Quiz theQuiz = new Quiz("Pop Quiz!",questions);
+
         theQuiz.printQuiz();
+        // theQuiz.runQuiz();
     }
 }
