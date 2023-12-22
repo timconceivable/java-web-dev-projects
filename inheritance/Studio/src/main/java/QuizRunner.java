@@ -5,7 +5,7 @@ import java.util.List;
 public class QuizRunner {
     public static void main(String[] args) {
         // CREATE & RUN QUIZ
-        List<Question> questions = new ArrayList<>();
+        ArrayList<Question> questions = new ArrayList<>();
 
         questions.add(new TrueFalse("Is Earth flat?", false));
         questions.add(new Choice("What is your favorite color?", Arrays.asList("yellow", "blue", "purple"), "purple"));

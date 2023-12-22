@@ -1,5 +1,15 @@
 QuizRunner class {
-    run application {
+    create question list
+    create questions
+    create quiz
+    run quiz
+}
+
+Quiz class {
+    print quiz
+    add questions - why? the quiz user is taking the quiz, not creating it
+    grade quiz { compare user input array to correct answers }
+    run quiz {
         forEach question {
             print question
             scan for user input
@@ -9,12 +19,6 @@ QuizRunner class {
         grade quiz, save score
         print results
     }
-}
-
-Quiz class {
-    print quiz
-    add questions
-    grade quiz?
 }
 
 Question class (abstract?) {
