@@ -1,9 +1,7 @@
 package org.launchcode;
 import java.util.ArrayList;
 import java.time.LocalDate;
-import static org.launchcode.Category.APPETIZER;
-import static org.launchcode.Category.ENTREE;
-import static org.launchcode.Category.DESSERT;
+import static org.launchcode.Category.*;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,17 +1,5 @@
 package org.launchcode;
 
-enum Category {
-    APPETIZER, ENTREE, DESSERT;
-    @Override public String toString() {
-        return switch (this) {
-            case APPETIZER -> "Appetizer";
-            case ENTREE -> "Entree";
-            case DESSERT -> "Dessert";
-            default -> null;
-        };
-    }
-}
-
 public class MenuItem {
     private String name;
     private Category category;
